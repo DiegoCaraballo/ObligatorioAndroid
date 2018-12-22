@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_Productos"
+        android:title="@string/Productos"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_Pendientes"
+        android:title="@string/Pedidos"
+        app:showAsAction="never"/>
+</menu>
