@@ -1,6 +1,7 @@
 package com.example.user.obligatorioandroid;
 
 import android.content.ClipData;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -53,13 +54,134 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    protected void agregarDatosPrueba(){
+        ContentValues valores = new ContentValues();
+
+        baseDatos.beginTransaction();
+
+        try{
+            //Categorias
+            valores.put(Base_Datos.Categoria.Nombre,"BIJOUTERIE");
+            baseDatos.insert(Base_Datos.CATEGORIA,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Categoria.Nombre,"PERFUME");
+            baseDatos.insert(Base_Datos.CATEGORIA,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Categoria.Nombre,"COSMETICOS");
+            baseDatos.insert(Base_Datos.CATEGORIA,null,valores);
+
+            //Productos
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"100");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"1");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"1");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"1");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"1");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"2");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"2");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"2");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"2");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"3");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"3");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
+            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Id_Categoria,"3");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+
+
+
+        }
+        catch (Exception ex){
+            Log.e(MIS_LOGS,"No se puedieron cargar los datos");
+        }
+        finally {
+            baseDatos.endTransaction();
+        }
+    }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
         baseDatos.close();
 
-        bdHelper.eliminarBaseDatos();
+       // bdHelper.eliminarBaseDatos();
     }
 
 }

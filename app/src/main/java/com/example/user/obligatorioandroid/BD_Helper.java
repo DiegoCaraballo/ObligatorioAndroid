@@ -34,6 +34,17 @@ public class BD_Helper extends SQLiteOpenHelper {
         baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Bijouterie');").toString());
         baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Perfumes');").toString());
 
+        Log.e(MIS_LOGS, "Se agregaron datos categoria");
+
+        baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PRODUCTO).append(" VALUES (NULL, '100', 'NULL', 'Articulo de test', 'test', '1');").toString());
+
+        Log.e(MIS_LOGS, "Se agregaron datos Producto");
+
+        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PEDIDO).append(" VALUES (NULL, 'si', 'si', '13', 'Cliente Test', '1');").toString());
+
+        Log.e(MIS_LOGS, "Se agregaron datos PEDIDO");
+
+
     }
 
     @Override

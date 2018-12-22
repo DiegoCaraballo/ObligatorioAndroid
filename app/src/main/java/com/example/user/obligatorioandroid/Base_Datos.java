@@ -14,7 +14,6 @@ public final class Base_Datos {
 
     private Base_Datos(){}
 
-
     public static abstract class Pedido implements BaseColumns {
 
         public static final String Pago_Adelantado = "PagoAdelantado";
@@ -30,8 +29,8 @@ public final class Base_Datos {
                 .append(_ID).append(" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ")
                 .append(Entregado).append(" BOOLEAN NOT NULL, ")
                 .append(Cantidad).append(" INTEGER NOT NULL, ")
-                .append(Cliente).append(" TEXT NOT NULL " )
-                .append(Id_Producto).append(" INTEGER NOT NULL")
+                .append(Cliente).append(" TEXT NOT NULL, " )
+                .append(Id_Producto).append(" INTEGER NOT NULL, ")
                 .append("FOREIGN KEY ("+ Id_Producto +") REFERENCES "+ PRODUCTO +" ("+ Producto._ID +"));")
                 .toString();
 
@@ -78,3 +77,5 @@ public final class Base_Datos {
     }
 
 }
+
+
