@@ -78,87 +78,87 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Precio,"100");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 1");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"1500");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art2");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"3000");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art3");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"60");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 4");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"68");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 5");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"1204");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 6");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"77");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 7");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"300");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 8");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"150");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 9");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"120");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 10");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"");
+            valores.put(Base_Datos.Producto.Precio,"50");
             valores.put(Base_Datos.Producto.Foto,"");
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
-            valores.put(Base_Datos.Producto.Nombre,"");
+            valores.put(Base_Datos.Producto.Nombre,"Art 10");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
