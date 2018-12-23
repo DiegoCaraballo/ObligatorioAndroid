@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         bdHelper = new BD_Helper(this);
         baseDatos = bdHelper.getWritableDatabase();
         Log.e(MIS_LOGS,"Llego al final del OnCreate");
+
+        agregarDatosPrueba();
     }
 
     @Override
@@ -60,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         baseDatos.beginTransaction();
 
+        Log.e(MIS_LOGS, "Ingreso a agregarDaosPrueba");
+
         try{
             //Categorias
             valores.put(Base_Datos.Categoria.Nombre,"BIJOUTERIE");
@@ -72,19 +77,20 @@ public class MainActivity extends AppCompatActivity {
             valores.clear();
             valores.put(Base_Datos.Categoria.Nombre,"COSMETICOS");
             baseDatos.insert(Base_Datos.CATEGORIA,null,valores);
-
+            Log.e(MIS_LOGS,"Empieza carga datos");
             //Productos
             valores.clear();
+
             valores.put(Base_Datos.Producto.Precio,"100");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,("drawable://" + R.drawable.biju1));
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
             valores.put(Base_Datos.Producto.Nombre,"Art 1");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
-
+            Log.e(MIS_LOGS,"Cargo la 1");
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"1500");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto, ("drawable://" + R.drawable.biju2));
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
             valores.put(Base_Datos.Producto.Nombre,"Art2");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
@@ -92,23 +98,16 @@ public class MainActivity extends AppCompatActivity {
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"3000");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.biju3).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
             valores.put(Base_Datos.Producto.Nombre,"Art3");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
-            valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"60");
-            valores.put(Base_Datos.Producto.Foto,"");
-            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
-            valores.put(Base_Datos.Producto.Nombre,"Art 4");
-            valores.put(Base_Datos.Producto.Id_Categoria,"1");
-            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"68");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.perfume1).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
             valores.put(Base_Datos.Producto.Nombre,"Art 5");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"1204");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.perfume2).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
             valores.put(Base_Datos.Producto.Nombre,"Art 6");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
@@ -124,23 +123,16 @@ public class MainActivity extends AppCompatActivity {
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"77");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.perfume3).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
             valores.put(Base_Datos.Producto.Nombre,"Art 7");
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
-            valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"300");
-            valores.put(Base_Datos.Producto.Foto,"");
-            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
-            valores.put(Base_Datos.Producto.Nombre,"Art 8");
-            valores.put(Base_Datos.Producto.Id_Categoria,"2");
-            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"150");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos1).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
             valores.put(Base_Datos.Producto.Nombre,"Art 9");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
@@ -148,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"120");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos2).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
             valores.put(Base_Datos.Producto.Nombre,"Art 10");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
@@ -156,14 +148,23 @@ public class MainActivity extends AppCompatActivity {
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"50");
-            valores.put(Base_Datos.Producto.Foto,"");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos3).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
             valores.put(Base_Datos.Producto.Nombre,"Art 10");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"50");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos4).toString());
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
+            valores.put(Base_Datos.Producto.Nombre,"Art 10");
+            valores.put(Base_Datos.Producto.Id_Categoria,"3");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
+            Log.e(MIS_LOGS, "LLego al final deagregarDaosPrueba");
 
+            baseDatos.setTransactionSuccessful();
 
         }
         catch (Exception ex){

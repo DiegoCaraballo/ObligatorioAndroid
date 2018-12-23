@@ -7,9 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".Lista_Productos">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rlDia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Prueba segundo layout"/>
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tvCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:text="Categoria:" />
+
+        <Spinner
+            android:id="@+id/spCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvCategoria"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp" />
+
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

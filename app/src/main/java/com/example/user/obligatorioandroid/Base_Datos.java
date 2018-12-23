@@ -51,7 +51,7 @@ public final class Base_Datos {
                 .append(PRODUCTO).append(" (")
                 .append(_ID).append(" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ")
                 .append(Precio).append(" DOUBLE NOT NULL, ")
-                .append(Foto).append(" BLOB NOT NULL, ")
+                .append(Foto).append(" TEXT NOT NULL, ")
                 .append(Descripcion).append(" TEXT NOT NULL, ")
                 .append(Nombre).append(" TEXT NOT NULL, ")
                 .append(Id_Categoria).append(" INTEGER NOT NULL, ")
