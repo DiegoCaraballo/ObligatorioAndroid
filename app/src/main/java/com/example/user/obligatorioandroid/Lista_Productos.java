@@ -9,7 +9,7 @@ import android.widget.GridView;
 public class Lista_Productos extends AppCompatActivity {
 
     protected GridView gvProductos;
-
+    public static final String EXTRA_PROD = "EXTRA_PROD";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
