@@ -8,7 +8,7 @@
     tools:context=".Lista_Productos">
 
     <RelativeLayout
-        android:id="@+id/rlDia"
+        android:id="@+id/rlCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp">
@@ -30,6 +30,14 @@
             android:layout_marginRight="8dp" />
 
     </RelativeLayout>
+
+    <fragment
+        android:id="@+id/frgListadoEmpleados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.example.user.obligatorioandroid.Listado_Producto_Fragment"
+        tools:layout="@layout/fragment_lista_producto" />
+
 
 
 
