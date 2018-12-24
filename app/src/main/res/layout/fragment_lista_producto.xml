@@ -5,9 +5,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <ListView
         android:id="@+id/lvsProductos"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="12dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:paddingBottom="7dp"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="10dp"
+
+       />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/tvNombre"
+        android:layout_below="@+id/tvPrecio"
+        android:layout_toRightOf="@+id/imgFoto"
+        android:layout_toEndOf="@+id/imgFoto" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/tvPrecio"
+        android:textSize="21sp"
+        android:textColor="#f65034"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imgFoto"
+        android:layout_toEndOf="@+id/imgFoto" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/imgFoto"
+
+        android:cropToPadding="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/tvNombre"
+        android:maxHeight="35dp"
+        android:maxWidth="74dp"
+        android:adjustViewBounds="true"
+        />
+
+
+
 
 </android.support.constraint.ConstraintLayout>

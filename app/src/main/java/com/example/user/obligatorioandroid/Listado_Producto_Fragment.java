@@ -45,7 +45,10 @@ public class Listado_Producto_Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+        Log.e(MIS_LOGS, "Entra OnCreateView Fragment_Listado");
+
         return  inflater.inflate(R.layout.fragment_lista_producto, container,false);
+
     }
 
     @Override
@@ -61,17 +64,25 @@ public class Listado_Producto_Fragment extends Fragment {
 
         List<Producto> productos = new ArrayList<>();
 
-        adaptadorProducto = new SimpleCursorAdapter(getContext(),R.layout.lista_productos,listarProducto(), Base_Datos.Producto.Columnas,
-                new int[]{R.id.tvId,R.id.tvPrecio,R.id.imgFoto,R.id.tvDescripcion,R.id.tvNombre,R.id.tvCategoria},0);
+        adaptadorProducto = new SimpleCursorAdapter(getContext(),
+                R.layout.fragment_lista_producto,
+                listarProducto(), Base_Datos.Producto.Columnas,
+                new int[]{R.id.tvId,R.id.tvPrecio,R.id.imgFoto,R.id.tvDescripcion,R.id.tvNombre,R.id.tvCategoria}
+                ,0);
+
 
         Log.e(MIS_LOGS, "Antes de cargar el listado");
+
         lvProd.setAdapter(adaptadorProducto);
-        Log.e(MIS_LOGS, "Despues de cargar el listado" + adaptadorProducto);
+
+        Log.e(MIS_LOGS, "Despues de cargar el listado" + adaptadorProducto.toString());
 
         lvProd.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Log.e(MIS_LOGS,"Entra al listener");
                 lvProdOnItemClick(parent,view,position,id);
+                Log.e(MIS_LOGS,"fuck");
             }
         });
 
@@ -93,7 +104,8 @@ public class Listado_Producto_Fragment extends Fragment {
         onProdSeleccionadoListener = null;
     }
 
-    public interface  OnProdSeleccionadoListener{
+    public interface OnProdSeleccionadoListener {
+
         void onProdSeleccionado(Producto prod);
     }
 }

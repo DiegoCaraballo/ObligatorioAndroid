@@ -16,35 +16,26 @@ public class BD_Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
 
-        Log.e(MIS_LOGS, "Entra en BD_HELPER");
 
         baseDatos.execSQL(Base_Datos.Categoria.CREAR_TABLA);
 
-        Log.e(MIS_LOGS, "CREA LA TABLA CATEGORIA");
+
 
         baseDatos.execSQL(Base_Datos.Producto.CREAR_TABLA);
 
-        Log.e(MIS_LOGS, "CREA LA TABLA PRODUCTO");
 
         baseDatos.execSQL(Base_Datos.Pedido.CREAR_TABLA);
-
-        Log.e(MIS_LOGS, "CREA LA TABLA PEDIDO");
 
         //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Cosmeticos');").toString());
         //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Bijouterie');").toString());
         //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Perfumes');").toString());
 
-        Log.e(MIS_LOGS, "Se agregaron datos categoria");
 
        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PRODUCTO).append(" VALUES (NULL, '100', '"+ R.drawable.biju1+"', 'Articulo de test', 'test', '1');").toString());
 
-        Log.e(MIS_LOGS, "Se agregaron datos Producto");
+
 
         //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PEDIDO).append(" VALUES (NULL, 'si', 'si', '13', 'Cliente Test', '1');").toString());
-
-        Log.e(MIS_LOGS, "Se agregaron datos PEDIDO");
-
-
 
 
     }

@@ -11,7 +11,8 @@
         android:id="@+id/rlCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        >
 
         <TextView
             android:id="@+id/tvCategoria"
@@ -27,16 +28,18 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tvCategoria"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            />
 
     </RelativeLayout>
-
     <fragment
-        android:id="@+id/frgListadoEmpleados"
+        android:id="@+id/frgListadoProducto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/rlCategoria"
         android:name="com.example.user.obligatorioandroid.Listado_Producto_Fragment"
-        tools:layout="@layout/fragment_lista_producto" />
+        tools:layout="@layout/fragment_lista_producto"
+        />
 
 
 

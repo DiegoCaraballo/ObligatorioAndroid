@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e(MIS_LOGS,"Entro al main activity OnCreate");
+
+
         bdHelper = new BD_Helper(this);
         baseDatos = bdHelper.getWritableDatabase();
-        Log.e(MIS_LOGS,"Llego al final del OnCreate");
 
         agregarDatosPrueba();
     }
@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()){
 
             case R.id.action_Pendientes:
-                Log.e(MIS_LOGS, "Entra en la actividad Pendientes");
+
                 startActivity(new Intent(getApplicationContext(), Lista_Pendientes.class));
                 return true;
             case R.id.action_Productos:
-                Log.e(MIS_LOGS, "Entra en la actividad Productos");
+
                 startActivity(new Intent(getApplicationContext(), Lista_Productos.class));
                 return true;
             default:
@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
         ContentValues valores = new ContentValues();
 
         baseDatos.beginTransaction();
-
-        Log.e(MIS_LOGS, "Ingreso a agregarDaosPrueba");
 
         try{
             //Categorias
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             valores.clear();
             valores.put(Base_Datos.Categoria.Nombre,"COSMETICOS");
             baseDatos.insert(Base_Datos.CATEGORIA,null,valores);
-            Log.e(MIS_LOGS,"Empieza carga datos");
+
             //Productos
             valores.clear();
 
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Nombre,"Art 1");
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
-            Log.e(MIS_LOGS,"Cargo la 1");
+
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"1500");
             valores.put(Base_Datos.Producto.Foto, ("drawable://" + R.drawable.biju2));
@@ -162,13 +160,12 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
-            Log.e(MIS_LOGS, "LLego al final deagregarDaosPrueba");
 
             baseDatos.setTransactionSuccessful();
 
         }
         catch (Exception ex){
-            Log.e(MIS_LOGS,"No se puedieron cargar los datos");
+            Log.e(MIS_LOGS,"No se  cargar los datos");
         }
         finally {
             baseDatos.endTransaction();
@@ -182,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
         baseDatos.close();
 
-       // bdHelper.eliminarBaseDatos();
+       bdHelper.eliminarBaseDatos();
     }
 
 }
