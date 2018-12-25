@@ -26,7 +26,6 @@ private Producto prod;
     protected void onStart() {
         super.onStart();
 
-
         frgDetalleProd.mostrarProd(prod);
     }
 }
