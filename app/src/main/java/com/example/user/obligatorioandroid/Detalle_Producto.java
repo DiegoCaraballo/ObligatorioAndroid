@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 public class Detalle_Producto extends AppCompatActivity {
 
@@ -27,5 +28,8 @@ private Producto prod;
         super.onStart();
 
         frgDetalleProd.mostrarProd(prod);
+    }
+
+    public void onClickPedido(View view) {
     }
 }
