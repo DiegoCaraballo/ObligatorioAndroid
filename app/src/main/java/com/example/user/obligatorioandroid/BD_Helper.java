@@ -16,38 +16,24 @@ public class BD_Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
 
-
         baseDatos.execSQL(Base_Datos.Categoria.CREAR_TABLA);
-
-
 
         baseDatos.execSQL(Base_Datos.Producto.CREAR_TABLA);
 
-
         baseDatos.execSQL(Base_Datos.Pedido.CREAR_TABLA);
-
-        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Cosmeticos');").toString());
-        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Bijouterie');").toString());
-        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL, 'Perfumes');").toString());
-
-
-       //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PRODUCTO).append(" VALUES (NULL, '100', '"+ R.drawable.biju1+"', 'Articulo de test', 'test', '1');").toString());
-
-
-
-        //baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.PEDIDO).append(" VALUES (NULL, 'si', 'si', '13', 'Cliente Test', '1');").toString());
-
 
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase baseDatos,  int oldVersion, int newVersion) {
-        baseDatos.execSQL(Base_Datos.Categoria.ELIMINAR_TABLA);
-        baseDatos.execSQL(Base_Datos.Producto.ELIMINAR_TABLA);
-        baseDatos.execSQL(Base_Datos.Pedido.ELIMINAR_TABLA);
-        onCreate(baseDatos);
-    }
+
+          baseDatos.execSQL(Base_Datos.Categoria.ELIMINAR_TABLA);
+          baseDatos.execSQL(Base_Datos.Producto.ELIMINAR_TABLA);
+          baseDatos.execSQL(Base_Datos.Pedido.ELIMINAR_TABLA);
+          onCreate(baseDatos);
+
+      }
     public BD_Helper(Context contexto){
         super(contexto, Base_Datos.NOMBRE_BD,null, Base_Datos.VERSION_BD);
         this.contexto = contexto;

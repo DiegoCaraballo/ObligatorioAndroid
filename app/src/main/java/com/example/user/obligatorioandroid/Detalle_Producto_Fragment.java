@@ -17,6 +17,7 @@ public class Detalle_Producto_Fragment extends Fragment {
     protected TextView tvNombre;
     protected TextView tvPrecio;
     protected TextView tvDesc;
+    protected TextView tvID;
     protected ImageView imgFoto;
 
 
@@ -31,7 +32,7 @@ public class Detalle_Producto_Fragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        tvID = (TextView)getView().findViewById(R.id.tvId);
         tvPrecio = (TextView)getView().findViewById(R.id.tvPrecio);
         tvNombre = (TextView)getView().findViewById(R.id.tvNombre);
         tvDesc = (TextView)getView().findViewById(R.id.tvDescripcion);
@@ -42,5 +43,6 @@ public class Detalle_Producto_Fragment extends Fragment {
         tvNombre.setText(String.valueOf(prod.getNombre()));
         tvDesc.setText(String.valueOf(prod.getDescripcion()));
         tvPrecio.setText(String.valueOf(prod.getPrecio()));
+        tvID.setText(String.valueOf(prod.getId()));
        }
 }

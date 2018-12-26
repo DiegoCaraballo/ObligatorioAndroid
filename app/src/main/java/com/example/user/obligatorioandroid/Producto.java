@@ -1,5 +1,7 @@
 package com.example.user.obligatorioandroid;
 
+import android.content.Intent;
+
 import java.io.Serializable;
 
 public class Producto implements Serializable {
@@ -8,6 +10,15 @@ public class Producto implements Serializable {
     private  String Descripcion ;
     private  String Nombre ;
     private  Categoria categoria ;
+    private Integer Id;
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
 
     public String getPrecio() {
         return Precio;

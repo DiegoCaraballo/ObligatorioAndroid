@@ -27,10 +27,11 @@ public final class Base_Datos {
         public static final String CREAR_TABLA = new StringBuilder("CREATE TABLE ")
                 .append(PEDIDO).append(" (")
                 .append(_ID).append(" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ")
-                .append(Entregado).append(" BOOLEAN NOT NULL, ")
-                .append(Cantidad).append(" INTEGER NOT NULL, ")
-                .append(Cliente).append(" TEXT NOT NULL, " )
-                .append(Id_Producto).append(" INTEGER NOT NULL, ")
+                .append(Entregado).append(" BOOLEAN, ")
+                .append(Cantidad).append(" INTEGER, ")
+                .append(Cliente).append(" TEXT, " )
+                .append(Id_Producto).append(" INTEGER, ")
+                .append(Pago_Adelantado).append(" TEXT, ")/*saQUE LSO NOT NULL Y AGREGUE ESTA LINEA*/
                 .append("FOREIGN KEY ("+ Id_Producto +") REFERENCES "+ PRODUCTO +" ("+ Producto._ID +"));")
                 .toString();
 

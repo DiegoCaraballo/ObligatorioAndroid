@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BD_Helper bdHelper;
     private SQLiteDatabase baseDatos;
-    private SimpleCursorAdapter adaptadorArtistas;
+  //  private SimpleCursorAdapter adaptadorProducto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         catch (Exception ex){
-            Log.e(MIS_LOGS,"No se  cargar los datos");
+            Log.e(MIS_LOGS,"Error al ingresar datos de Prueba");
         }
         finally {
             baseDatos.endTransaction();
