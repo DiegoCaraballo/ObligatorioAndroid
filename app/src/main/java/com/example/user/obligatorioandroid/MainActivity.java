@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         bdHelper = new BD_Helper(this);
         baseDatos = bdHelper.getWritableDatabase();
 

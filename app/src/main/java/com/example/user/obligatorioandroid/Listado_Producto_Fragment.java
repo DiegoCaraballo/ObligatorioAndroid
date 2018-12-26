@@ -12,9 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +26,7 @@ public class Listado_Producto_Fragment extends Fragment {
     public static  Listado_Producto_Fragment newTnstance(){ return  new Listado_Producto_Fragment();}
 
     private SimpleCursorAdapter adaptadorProducto;
+    private SimpleCursorAdapter adaptadorCategoria;
     private BD_Helper bdHelper;
     private SQLiteDatabase baseDatos;
 
@@ -116,4 +120,6 @@ public class Listado_Producto_Fragment extends Fragment {
     public interface OnProdSeleccionadoListener {
         void onProdSeleccionado(Producto prod);
     }
+
+
 }

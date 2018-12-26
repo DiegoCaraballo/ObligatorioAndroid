@@ -27,8 +27,6 @@
             android:name="com.example.user.obligatorioandroid.Listado_Producto_Fragment"
             tools:layout="@layout/fragment_lista_producto" />
 
-
-
     </LinearLayout>
 
 </RelativeLayout>
