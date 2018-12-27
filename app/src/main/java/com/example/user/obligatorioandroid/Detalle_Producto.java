@@ -8,7 +8,10 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Checkable;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +24,9 @@ protected  Detalle_Producto_Fragment frgDetalleProd;
     public static final String MIS_LOGS = "MIS_LOGS";
     protected EditText etNombreCli;
     private EditText etCantidad;
-    private EditText etPagoAdelantado;
+    private CheckBox cbPagoAdelantado;
     private TextView tvIDProd;
+    private int estadoCheckBox = 0;
 
 private Producto prod;
     @Override
@@ -56,16 +60,17 @@ private Producto prod;
 
         etNombreCli = findViewById(R.id.etNombreCli);
         etCantidad = findViewById(R.id.etCantidad);
-        etPagoAdelantado = findViewById(R.id.etPagoAdelantado);
+        cbPagoAdelantado = findViewById(R.id.cbPagoAdelantado);
         tvIDProd = findViewById(R.id.tvId);
+        cbPagoAdelantado = findViewById(R.id.cbPagoAdelantado);
 
         try{
 
             valores.put(Base_Datos.Pedido.Cantidad,etCantidad.getText().toString());
             valores.put(Base_Datos.Pedido.Cliente,etNombreCli.getText().toString());
-            valores.put(Base_Datos.Pedido.Pago_Adelantado,etPagoAdelantado.getText().toString());
+            valores.put(Base_Datos.Pedido.Pago_Adelantado, estadoCheckBox);
             valores.put(Base_Datos.Pedido.Id_Producto,tvIDProd.getText().toString());
-            valores.put(Base_Datos.Pedido.Entregado,"0");
+            valores.put(Base_Datos.Pedido.Entregado, "0");
 
             baseDatos.insert(Base_Datos.PEDIDO,null,valores);
 
@@ -73,7 +78,7 @@ private Producto prod;
 
             etNombreCli.setText("");
             etCantidad .setText("");
-            etPagoAdelantado.setText("");
+            cbPagoAdelantado.toggle();
 
             Toast.makeText(this, "Pedido Agregado", Toast.LENGTH_SHORT).show();
 
@@ -87,6 +92,18 @@ private Producto prod;
         finally {
             baseDatos.endTransaction();
         }
+    }
 
+    // Para saber si el CheckBox está tildado o no
+    public void itemClicked(View v){
+        CheckBox checkBox = (CheckBox)v;
+        if(checkBox.isChecked()){
+            estadoCheckBox = 1;
+            //Toast.makeText(this, String.valueOf(estadoCheckBox), Toast.LENGTH_LONG).show();
+        }else{
+            estadoCheckBox = 0;
+            //Toast.makeText(this, String.valueOf(estadoCheckBox), Toast.LENGTH_LONG).show();
         }
+    }
+
 }

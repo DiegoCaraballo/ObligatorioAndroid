@@ -3,4 +3,9 @@
     <string name="btnPrueba">Button</string>
     <string name="Productos">Productos</string>
     <string name="Pedidos">Pedidos</string>
+
+    <string-array name="pagoAdelantado">
+        <item>No</item>
+        <item>Si</item>
+    </string-array>
 </resources>

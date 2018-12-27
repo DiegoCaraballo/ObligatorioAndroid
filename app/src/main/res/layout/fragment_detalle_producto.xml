@@ -71,14 +71,14 @@
             android:layout_height="wrap_content"
             android:hint="Nombre Cliente"
             android:inputType="text" />
-        <EditText
-            android:id="@+id/etPagoAdelantado"
-            android:layout_width="wrap_content"
+
+        <CheckBox
+            android:id="@+id/cbPagoAdelantado"
             android:layout_height="wrap_content"
-            android:inputType="textCapCharacters"
-            android:hint="Pago Adelantado"
-            android:maxLength="2"
-            />
+            android:text="Pago adelantado?"
+            android:layout_width="fill_parent"
+            android:onClick="itemClicked">
+        </CheckBox>
 
         <Button
             android:id="@+id/btnPedido"
