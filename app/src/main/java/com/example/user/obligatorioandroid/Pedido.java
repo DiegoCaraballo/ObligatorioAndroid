@@ -1,36 +1,31 @@
 package com.example.user.obligatorioandroid;
 
+import android.text.BoringLayout;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class Pedido implements Serializable {
-    public  String Pago_Adelantado ;
-    public  String Entregado ;
-    public  String Cantidad ;
-    public  String Cliente ;
-    public List<Producto> ListaProd ;
+    private  Boolean Pago_Adelantado ;
+    private Boolean Entregado ;
+    private  Integer Cantidad ;
+    private  String Cliente ;
+    private Producto Prod ;
+    private Integer ID;
 
-    public String getPago_Adelantado() {
-        return Pago_Adelantado;
+    public Integer getID() {
+        return ID;
     }
 
-    public void setPago_Adelantado(String pago_Adelantado) {
-        Pago_Adelantado = pago_Adelantado;
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 
-    public String getEntregado() {
-        return Entregado;
-    }
-
-    public void setEntregado(String entregado) {
-        Entregado = entregado;
-    }
-
-    public String getCantidad() {
+    public Integer getCantidad() {
         return Cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(Integer cantidad) {
         Cantidad = cantidad;
     }
 
@@ -42,22 +37,39 @@ public class Pedido implements Serializable {
         Cliente = cliente;
     }
 
-    public List<Producto> getListaProd() {
-        return ListaProd;
+    public Boolean getPago_Adelantado() {
+        return Pago_Adelantado;
     }
 
-    public void setListaProd(List<Producto> listaProd) {
-        ListaProd = listaProd;
+    public void setPago_Adelantado(Boolean pago_Adelantado) {
+        Pago_Adelantado = pago_Adelantado;
+    }
+
+    public Boolean getEntregado() {
+        return Entregado;
+    }
+
+    public void setEntregado(Boolean entregado) {
+        Entregado = entregado;
+    }
+
+    public Producto getProd() {
+        return Prod;
+    }
+
+    public void setProd(Producto prod) {
+        Prod = prod;
     }
 
     public Pedido() {
     }
 
-    public Pedido(String pago_Adelantado, String entregado, String cantidad, String cliente, List<Producto> listaProd) {
+    public Pedido(Boolean pago_Adelantado, Boolean entregado, Integer cantidad, String cliente, Producto prod, Integer ID) {
         Pago_Adelantado = pago_Adelantado;
         Entregado = entregado;
         Cantidad = cantidad;
         Cliente = cliente;
-        ListaProd = listaProd;
+        Prod = prod;
+        this.ID = ID;
     }
 }

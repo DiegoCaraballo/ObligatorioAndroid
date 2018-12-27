@@ -22,7 +22,7 @@ public final class Base_Datos {
         public static final String Cliente = "Cliente";
         public static final String Id_Producto = "Id_Producto";
 
-        public static final String[] COLUMNAS = {_ID, Pago_Adelantado, Entregado ,Cantidad , Cliente};
+        public static final String[] COLUMNAS = {_ID, Entregado ,Cantidad ,Cliente, Id_Producto,Pago_Adelantado};
 
         public static final String CREAR_TABLA = new StringBuilder("CREATE TABLE ")
                 .append(PEDIDO).append(" (")
@@ -31,7 +31,7 @@ public final class Base_Datos {
                 .append(Cantidad).append(" INTEGER, ")
                 .append(Cliente).append(" TEXT, " )
                 .append(Id_Producto).append(" INTEGER, ")
-                .append(Pago_Adelantado).append(" TEXT, ")/*saQUE LSO NOT NULL Y AGREGUE ESTA LINEA*/
+                .append(Pago_Adelantado).append(" BOOLEAN, ")/*saQUE LSO NOT NULL Y AGREGUE ESTA LINEA*/
                 .append("FOREIGN KEY ("+ Id_Producto +") REFERENCES "+ PRODUCTO +" ("+ Producto._ID +"));")
                 .toString();
 

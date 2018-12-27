@@ -22,7 +22,8 @@ public class Lista_Productos extends AppCompatActivity implements  Listado_Produ
     private SQLiteDatabase baseDatos;
     public static final String MIS_LOGS = "MIS_LOGS";
 
-    protected GridView gvProductos;
+
+
     public static final String EXTRA_PROD = "EXTRA_PROD";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,7 @@ public class Lista_Productos extends AppCompatActivity implements  Listado_Produ
 
         for(int i = 0; i < listaCategorias.size(); i++){
 
-            categoriaList.add((listaCategorias.get(i).getId() + " - " + listaCategorias.get(i).getNombre()));
+            categoriaList.add((listaCategorias.get(i).getNombre()));
 
         }
 

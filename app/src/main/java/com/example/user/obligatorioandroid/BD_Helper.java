@@ -1,9 +1,11 @@
 package com.example.user.obligatorioandroid;
 
 import android.app.NotificationChannel;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.util.Log;
 
 import java.util.MissingFormatArgumentException;
@@ -12,6 +14,8 @@ public class BD_Helper extends SQLiteOpenHelper {
 
     private Context contexto;
     public static final String MIS_LOGS = "MIS_LOGS";
+    private SQLiteDatabase baseDatos;
+
 
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
@@ -21,6 +25,8 @@ public class BD_Helper extends SQLiteOpenHelper {
         baseDatos.execSQL(Base_Datos.Producto.CREAR_TABLA);
 
         baseDatos.execSQL(Base_Datos.Pedido.CREAR_TABLA);
+        baseDatos.execSQL(new StringBuilder("INSERT INTO ").append(Base_Datos.CATEGORIA).append(" VALUES (NULL,'BIJOUTERIE');").toString());
+      //agregarDatosPrueba();
 
     }
 

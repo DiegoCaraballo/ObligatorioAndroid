@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+   <LinearLayout
+       android:id="@+id/llTop"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentLeft="true"
+       >
+    <TextView
+        android:id="@+id/tvCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/actvCliente"
+        android:layout_marginLeft="8dp"
+        android:text="Cliente:" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvCliente"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:inputType="text"
+        android:imeActionId="1000"
+        android:imeActionLabel="Listo" />
+   </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/llMid"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/llTop"
+    >
+    <ListView
+        android:id="@+id/lvsPedidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="12dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:paddingBottom="7dp"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="10dp"
+
+        />
+    <TextView
+        android:id="@+id/tvIdPedido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        />
+    <TextView
+        android:id="@+id/tvNomCli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        />
+    <TextView
+        android:id="@+id/tvProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+         />
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/llBot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerInParent="true"
+    android:layout_below="@+id/llMid"
+    >
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSumaTotal"
+        android:layout_marginLeft="8dp"
+        android:text="Total Pedidos::" />
+
+    <TextView
+        android:id="@+id/tvSumaTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotal"
+        android:layout_marginLeft="8dp"
+        />
+</LinearLayout>>
+
+</RelativeLayout>

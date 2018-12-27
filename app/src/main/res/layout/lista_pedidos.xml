@@ -5,11 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Lista_Pendientes">
+    tools:context=".Lista_Pendientes"
+    >
 
-    <TextView
+    <fragment
+        android:id="@+id/frgListadoPedido"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pendientes"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlCategoria"
+        android:name="com.example.user.obligatorioandroid.Listado_Pedido_Fragment"
+        tools:layout="@layout/fragment_lista_pedido"/>
 
 </RelativeLayout>

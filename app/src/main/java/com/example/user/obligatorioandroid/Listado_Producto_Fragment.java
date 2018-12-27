@@ -56,7 +56,7 @@ public class Listado_Producto_Fragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         bdHelper = new BD_Helper(getContext());
-        baseDatos = bdHelper.getWritableDatabase();
+        baseDatos = bdHelper.getReadableDatabase();
 
         lvProd = (ListView)getView().findViewById(R.id.lvsProductos);
 
@@ -96,7 +96,7 @@ public class Listado_Producto_Fragment extends Fragment {
         Producto pro = new Producto();
         pro.setId(cursor.getInt(columnaID));
         pro.setNombre(cursor.getString(columnaNombre));
-        pro.setPrecio(cursor.getString(columnaPrecio));
+        pro.setPrecio(cursor.getDouble(columnaPrecio));
         pro.setDescripcion(cursor.getString(columnaDesc));
 
         if (onProdSeleccionadoListener != null){
@@ -108,7 +108,7 @@ public class Listado_Producto_Fragment extends Fragment {
     protected Cursor listarProducto(){
         return baseDatos.query(Base_Datos.PRODUCTO, Base_Datos.Producto.Columnas,
                 null,null,null,null,
-                Base_Datos.Producto._ID+ " DESC");
+                Base_Datos.Producto._ID+ " ASC");
     }
 
     @Override

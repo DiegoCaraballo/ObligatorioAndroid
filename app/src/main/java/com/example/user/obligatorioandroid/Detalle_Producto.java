@@ -65,6 +65,7 @@ private Producto prod;
             valores.put(Base_Datos.Pedido.Cliente,etNombreCli.getText().toString());
             valores.put(Base_Datos.Pedido.Pago_Adelantado,etPagoAdelantado.getText().toString());
             valores.put(Base_Datos.Pedido.Id_Producto,tvIDProd.getText().toString());
+            valores.put(Base_Datos.Pedido.Entregado,"0");
 
             baseDatos.insert(Base_Datos.PEDIDO,null,valores);
 

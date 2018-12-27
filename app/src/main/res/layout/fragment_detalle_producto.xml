@@ -57,20 +57,20 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         >
+
         <EditText
             android:id="@+id/etCantidad"
-            android:layout_width="wrap_content"
+            android:layout_width="147dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
             android:hint="Cantidad"
-            />
+            android:inputType="number" />
+
         <EditText
             android:id="@+id/etNombreCli"
-            android:layout_width="wrap_content"
+            android:layout_width="147dp"
             android:layout_height="wrap_content"
-            android:inputType="text"
             android:hint="Nombre Cliente"
-            />
+            android:inputType="text" />
         <EditText
             android:id="@+id/etPagoAdelantado"
             android:layout_width="wrap_content"
@@ -84,9 +84,8 @@
             android:id="@+id/btnPedido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pedir"
             android:onClick="onClickPedido"
-            />
+            android:text="Pedir" />
     </LinearLayout>
 
 </LinearLayout>

@@ -3,9 +3,10 @@ package com.example.user.obligatorioandroid;
 import android.content.Intent;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class Producto implements Serializable {
-    private  String Precio;
+    private Double Precio;
     private  String Foto ;
     private  String Descripcion ;
     private  String Nombre ;
@@ -20,11 +21,11 @@ public class Producto implements Serializable {
         Id = id;
     }
 
-    public String getPrecio() {
+    public Double getPrecio() {
         return Precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         Precio = precio;
     }
 
@@ -60,15 +61,16 @@ public class Producto implements Serializable {
         this.categoria = categoria;
     }
 
-    public Producto(String precio, String foto, String descripcion, String nombre, Categoria categoria) {
+    public Producto(Double precio, String foto, String descripcion, String nombre, Categoria categoria, Integer id) {
         Precio = precio;
         Foto = foto;
         Descripcion = descripcion;
         Nombre = nombre;
         this.categoria = categoria;
+        Id = id;
     }
 
     public Producto() {
-        this("100","asdas","asda","asd", null);//TODO ver como paso la categoria y la foto
+
     }
 }

@@ -31,32 +31,14 @@ public class MainActivity extends AppCompatActivity {
         bdHelper = new BD_Helper(this);
         baseDatos = bdHelper.getWritableDatabase();
 
+        eliminarDatos();
         agregarDatosPrueba();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    protected void eliminarDatos() {
+        baseDatos.delete(Base_Datos.PRODUCTO, Base_Datos.Producto._ID + " > ?", new String[] { "0" });
+        baseDatos.delete(Base_Datos.CATEGORIA, Base_Datos.Categoria._ID + " > ?", new String[] { "0" });
     }
-
-    public boolean onOptionsItemSelected(MenuItem item){
-
-        switch(item.getItemId()){
-
-            case R.id.action_Pendientes:
-
-                startActivity(new Intent(getApplicationContext(), Lista_Pendientes.class));
-                return true;
-            case R.id.action_Productos:
-
-                startActivity(new Intent(getApplicationContext(), Lista_Productos.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     protected void agregarDatosPrueba(){
         ContentValues valores = new ContentValues();
 
@@ -101,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Id_Categoria,"1");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"500");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.biju3).toString());
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 1");
+            valores.put(Base_Datos.Producto.Nombre,"Art4");
+            valores.put(Base_Datos.Producto.Id_Categoria,"1");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"68");
@@ -126,6 +116,14 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Id_Categoria,"2");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"800");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.perfume3).toString());
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 2");
+            valores.put(Base_Datos.Producto.Nombre,"Art 8");
+            valores.put(Base_Datos.Producto.Id_Categoria,"2");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
 
             valores.clear();
             valores.put(Base_Datos.Producto.Precio,"150");
@@ -147,15 +145,23 @@ public class MainActivity extends AppCompatActivity {
             valores.put(Base_Datos.Producto.Precio,"50");
             valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos3).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
-            valores.put(Base_Datos.Producto.Nombre,"Art 10");
+            valores.put(Base_Datos.Producto.Nombre,"Art 11");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
             valores.clear();
-            valores.put(Base_Datos.Producto.Precio,"50");
+            valores.put(Base_Datos.Producto.Precio,"900");
             valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos4).toString());
             valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
-            valores.put(Base_Datos.Producto.Nombre,"Art 10");
+            valores.put(Base_Datos.Producto.Nombre,"Art 12");
+            valores.put(Base_Datos.Producto.Id_Categoria,"3");
+            baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
+
+            valores.clear();
+            valores.put(Base_Datos.Producto.Precio,"1800");
+            valores.put(Base_Datos.Producto.Foto,Uri.parse("res:///" + R.drawable.cosmeticos4).toString());
+            valores.put(Base_Datos.Producto.Descripcion,"ARTICULO PRUEBA CAT 3");
+            valores.put(Base_Datos.Producto.Nombre,"Art 13");
             valores.put(Base_Datos.Producto.Id_Categoria,"3");
             baseDatos.insert(Base_Datos.PRODUCTO,null,valores);
 
@@ -170,6 +176,30 @@ public class MainActivity extends AppCompatActivity {
             baseDatos.endTransaction();
         }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        switch(item.getItemId()){
+
+            case R.id.action_Pendientes:
+
+                startActivity(new Intent(getApplicationContext(), Lista_Pendientes.class));
+                return true;
+            case R.id.action_Productos:
+
+                startActivity(new Intent(getApplicationContext(), Lista_Productos.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 
 
     @Override

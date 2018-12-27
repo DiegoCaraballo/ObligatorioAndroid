@@ -4,7 +4,15 @@ import java.io.Serializable;
 
 public class Categoria implements Serializable {
     private String Nombre;
-    private  int Id;
+    private  Integer Id;
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
 
     public String getNombre() {
         return Nombre;
@@ -14,22 +22,12 @@ public class Categoria implements Serializable {
         Nombre = nombre;
     }
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
 
     public Categoria() {
-    this("UnaCat",1);
     }
 
-    public Categoria(String nombre, int id) {
+    public Categoria(String nombre, Integer id) {
         Nombre = nombre;
         Id = id;
     }
-
-
 }
